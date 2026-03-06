@@ -1,0 +1,22 @@
+# Залежності
+node_modules/
+
+# Логи
+*.log
+npm-debug.log*
+
+# Системні файли
+.DS_Store
+Thumbs.db
+
+# Секрети
+.env
+.env.local
+
+# Артефакти збірки
+dist/
+build/
+
+# IDE
+.idea/
+.vscode/
