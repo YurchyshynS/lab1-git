@@ -10,5 +10,5 @@
 
 ## Запуск проєкту
 1. Клонувати репозиторій:
-   git clone https://github.com/твій-нік/lab1-git.git
+   git clone https://github.com/YurchyshynS/lab1-git.git
 2. Відкрити src/index.html у браузері
