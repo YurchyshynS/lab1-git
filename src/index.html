@@ -3,11 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <title>Task Manager</title>
-  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Менеджер завдань</h1>
+  <h1>Task Manager</h1>
+  <input id="task-input" type="text" placeholder="Назва задачі">
+  <button id="add-btn">Додати</button>
   <ul id="task-list"></ul>
-  <script src="app.js"></script>
+
+  <script>
+    const input = document.getElementById('task-input');
+    const btn = document.getElementById('add-btn');
+    const list = document.getElementById('task-list');
+
+    btn.addEventListener('click', () => {
+      const name = input.value.trim();
+      if (!name) return;
+      const li = document.createElement('li');
+      li.textContent = name;
+      list.appendChild(li);
+      input.value = '';
+    });
+  </script>
 </body>
 </html>
