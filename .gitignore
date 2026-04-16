@@ -1,5 +1,8 @@
 # Залежності
 node_modules/
+coverage/
+test-results/
+playwright-report/
 
 # Логи
 *.log
