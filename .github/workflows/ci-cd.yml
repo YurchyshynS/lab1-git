@@ -1,0 +1,15 @@
+name: CI/CD Pipeline
+
+# Тригери для запуску пайплайну
+on:
+  # Запуск при push у гілки main та develop
+  push:
+    branches:
+    - main
+    - develop
+    
+  # Запуск при створенні Pull Request
+  pull_request:
+    branches:
+    - main
+    - develop
