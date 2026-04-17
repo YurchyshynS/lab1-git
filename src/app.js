@@ -22,3 +22,10 @@ export function getActiveTasks(tasks) {
 export function getCompletedTasks(tasks) {
   return tasks.filter(task => task.done);
 }
+
+// Відображення змінної оточення
+const badge = document.getElementById('env-badge');
+if (badge) {
+  badge.textContent = 'Режим: ' + import.meta.env.VITE_APP_STATUS;
+  badge.style.cssText = 'padding:4px 10px;background:#e0f0ff;font-size:12px;text-align:center;';
+}
