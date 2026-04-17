@@ -15,20 +15,42 @@ on:
     - develop
 
 jobs:
+   # Job для збірки та тестування
   build-and-test:
-    runs-on: ubuntu-latest
+    name: Build and Test
+    runs-on: ubuntu-latest # Запуск на віртуальній машині Linux
 
     steps:
+      # Крок 1: Отримання коду з репозиторію
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # Крок 2: Налаштування Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: '20'
+          cache: 'npm'
 
+      # Крок 3: Встановлення залежностей
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
-      - name: Run lint
+      # Крок 4: Перевірка якості коду (Linting)
+      - name: Run linter
         run: npm run lint
+
+      # Крок 5: Запуск юніт-тестів
+      - name: Run unit tests
+        run: npm run test:unit
+
+      # Крок 6: Збірка проєкту для продакшну
+      - name: Build for production
+        run: npm run build
+
+      # Крок 7: Збереження артефакту збірки
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
