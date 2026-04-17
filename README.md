@@ -1,3 +1,4 @@
+[![CI/CD Pipeline](https://github.com/YurchyshynS/lab1-git/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/YurchyshynS/lab1-git/actions/workflows/ci-cd.yml)
 # Lab1 Git Practice
 
 ## Опис
